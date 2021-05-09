@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>时钟表盘</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<!-- https://github.com/zhchjiang95/dial-clock -->
+<body>
+  <button onclick="onSound()" style="margin-bottom: 12px;">开启/关闭声音</button>
+  <audio id="audio" src="./media/di.mp3"></audio>
+  <div id="range">
+    <div class="tick-mark">
+      <div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+        <div class="scale"></div>
+      </div>
+      <div>
+        <span class="label"><label>1</label></span>
+        <span class="label"><label>2</label></span>
+        <span class="label"><label>3</label></span>
+        <span class="label"><label>4</label></span>
+        <span class="label"><label>5</label></span>
+        <span class="label"><label>6</label></span>
+        <span class="label"><label>7</label></span>
+        <span class="label"><label>8</label></span>
+        <span class="label"><label>9</label></span>
+        <span class="label"><label>10</label></span>
+        <span class="label"><label>11</label></span>
+        <span class="label"><label>12</label></span>
+      </div>
+    </div>
+    <div class="indicator">
+      <div class="h"></div>
+      <div class="m"></div>
+      <div class="s"></div>
+    </div>
+  </div>
+
+  <script>
+    const hRefer = {
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      6: 6,
+      7: 7,
+      8: 8,
+      9: 9,
+      10: 10,
+      11: 11,
+      12: 12,
+      13: 1,
+      14: 2,
+      15: 3,
+      16: 4,
+      17: 5,
+      18: 6,
+      19: 7,
+      20: 8,
+      21: 9,
+      22: 10,
+      23: 11,
+      24: 12,
+    }
+    const hEl = document.querySelector('.h')
+    const mEl = document.querySelector('.m')
+    const sEl = document.querySelector('.s')
+
+    let sound = false
+    const onSound = () => {
+      sound = !sound
+    }
+
+    const clock = () => {
+      let flag = 1
+      setInterval(() => {
+        flag++
+        if (flag === 3) {
+          hEl.style.transition = 'none'
+          mEl.style.transition = 'none'
+          sEl.style.transition = 'none'
+        }
+        const time = new Date()
+        const h = time.getHours()
+        const m = time.getMinutes()
+        const s = time.getSeconds()
+        sound && audio.play()
+        hEl.style.transform = `translateX(-50%) rotate(${hRefer[h] * 30 + m / 60 + s / 360}deg)`
+        mEl.style.transform = `translateX(-50%) rotate(${m * 6 + s / 60}deg)`
+        sEl.style.transform = `translateX(-50%) rotate(${s * 6}deg)`
+      }, 1000)
+    }
+
+    clock()
+  </script>
+</body>
+
+</html>

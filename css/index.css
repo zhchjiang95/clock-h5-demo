@@ -1,0 +1,480 @@
+#range {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 6px;
+  border: 12px solid #464646;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.indicator::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: -2px -1px 10px 0px #3a3b40a3;
+  background-color: #c0911f;
+}
+
+.indicator::after{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: -2px -4px 9px 0px #45464c;
+  background-color: #c0911f;
+}
+
+.indicator .h,
+.indicator .m,
+.indicator .s {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  transform-origin: top;
+  border-radius: 40px;
+  box-shadow: -2px -2px 10px 0px #4546499c;
+  background-color: #c0911f;
+  transition: .3s;
+}
+
+.indicator .h {
+  z-index: 1;
+  width: 12px;
+  height: 58px;
+}
+
+.indicator .m {
+  z-index: 3;
+  width: 8px;
+  height: 78px;
+}
+
+.indicator .s {
+  z-index: 4;
+  width: 4px;
+  height: 90px;
+}
+
+.indicator .s::after{
+  content: '';
+  display: block;
+  width: 4px;
+  height: 16px;
+  margin-top: -22px;
+  box-shadow: -2px -2px 10px 0px #4546499c;
+  border-radius: 40px;
+  background-color: #c0911f;
+}
+
+/* 刻度线 */
+.tick-mark {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.tick-mark .scale {
+  position: absolute;
+  top: 0;
+  left: 99px;
+  transform-origin: center 100px;
+  width: 1px;
+  height: 6px;
+  background-color: #979aa7;
+}
+
+.tick-mark span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: center 100px;
+  padding: 10px;
+}
+
+.tick-mark span label {
+  display: block;
+  font-size: 20px;
+  color: #464646;
+}
+
+.tick-mark .scale:nth-of-type(5n) {
+  width: 2px;
+  height: 8px;
+  background-color: #63677a;
+}
+
+.tick-mark>div:first-child {
+  transform-origin: center 100px;
+  /* animation: onRotate 60s infinite linear; */
+}
+
+@keyframes onRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 旋转刻度角度 */
+.tick-mark .scale:nth-of-type(1) {
+  transform: rotateZ(6deg);
+}
+
+.tick-mark .scale:nth-of-type(2) {
+  transform: rotateZ(12deg);
+}
+
+.tick-mark .scale:nth-of-type(3) {
+  transform: rotateZ(18deg);
+}
+
+.tick-mark .scale:nth-of-type(4) {
+  transform: rotateZ(24deg);
+}
+
+.tick-mark .scale:nth-of-type(5) {
+  transform: rotateZ(30deg);
+}
+
+.tick-mark .scale:nth-of-type(6) {
+  transform: rotateZ(36deg);
+}
+
+.tick-mark .scale:nth-of-type(7) {
+  transform: rotateZ(42deg);
+}
+
+.tick-mark .scale:nth-of-type(8) {
+  transform: rotateZ(48deg);
+}
+
+.tick-mark .scale:nth-of-type(9) {
+  transform: rotateZ(54deg);
+}
+
+.tick-mark .scale:nth-of-type(10) {
+  transform: rotateZ(60deg);
+}
+
+.tick-mark .scale:nth-of-type(11) {
+  transform: rotateZ(66deg);
+}
+
+.tick-mark .scale:nth-of-type(12) {
+  transform: rotateZ(72deg);
+}
+
+.tick-mark .scale:nth-of-type(13) {
+  transform: rotateZ(78deg);
+}
+
+.tick-mark .scale:nth-of-type(14) {
+  transform: rotateZ(84deg);
+}
+
+.tick-mark .scale:nth-of-type(15) {
+  transform: rotateZ(90deg);
+}
+
+.tick-mark .scale:nth-of-type(16) {
+  transform: rotateZ(96deg);
+}
+
+.tick-mark .scale:nth-of-type(17) {
+  transform: rotateZ(102deg);
+}
+
+.tick-mark .scale:nth-of-type(18) {
+  transform: rotateZ(108deg);
+}
+
+.tick-mark .scale:nth-of-type(19) {
+  transform: rotateZ(114deg);
+}
+
+.tick-mark .scale:nth-of-type(20) {
+  transform: rotateZ(120deg);
+}
+
+.tick-mark .scale:nth-of-type(21) {
+  transform: rotateZ(126deg);
+}
+
+.tick-mark .scale:nth-of-type(22) {
+  transform: rotateZ(132deg);
+}
+
+.tick-mark .scale:nth-of-type(23) {
+  transform: rotateZ(138deg);
+}
+
+.tick-mark .scale:nth-of-type(24) {
+  transform: rotateZ(144deg);
+}
+
+.tick-mark .scale:nth-of-type(25) {
+  transform: rotateZ(150deg);
+}
+
+.tick-mark .scale:nth-of-type(26) {
+  transform: rotateZ(156deg);
+}
+
+.tick-mark .scale:nth-of-type(27) {
+  transform: rotateZ(162deg);
+}
+
+.tick-mark .scale:nth-of-type(28) {
+  transform: rotateZ(168deg);
+}
+
+.tick-mark .scale:nth-of-type(29) {
+  transform: rotateZ(174deg);
+}
+
+.tick-mark .scale:nth-of-type(30) {
+  transform: rotateZ(180deg);
+}
+
+.tick-mark .scale:nth-of-type(31) {
+  transform: rotateZ(186deg);
+}
+
+.tick-mark .scale:nth-of-type(32) {
+  transform: rotateZ(192deg);
+}
+
+.tick-mark .scale:nth-of-type(33) {
+  transform: rotateZ(198deg);
+}
+
+.tick-mark .scale:nth-of-type(34) {
+  transform: rotateZ(204deg);
+}
+
+.tick-mark .scale:nth-of-type(35) {
+  transform: rotateZ(210deg);
+}
+
+.tick-mark .scale:nth-of-type(36) {
+  transform: rotateZ(216deg);
+}
+
+.tick-mark .scale:nth-of-type(37) {
+  transform: rotateZ(222deg);
+}
+
+.tick-mark .scale:nth-of-type(38) {
+  transform: rotateZ(228deg);
+}
+
+.tick-mark .scale:nth-of-type(39) {
+  transform: rotateZ(234deg);
+}
+
+.tick-mark .scale:nth-of-type(40) {
+  transform: rotateZ(240deg);
+}
+
+.tick-mark .scale:nth-of-type(41) {
+  transform: rotateZ(246deg);
+}
+
+.tick-mark .scale:nth-of-type(42) {
+  transform: rotateZ(252deg);
+}
+
+.tick-mark .scale:nth-of-type(43) {
+  transform: rotateZ(258deg);
+}
+
+.tick-mark .scale:nth-of-type(44) {
+  transform: rotateZ(264deg);
+}
+
+.tick-mark .scale:nth-of-type(45) {
+  transform: rotateZ(270deg);
+}
+
+.tick-mark .scale:nth-of-type(46) {
+  transform: rotateZ(276deg);
+}
+
+.tick-mark .scale:nth-of-type(47) {
+  transform: rotateZ(282deg);
+}
+
+.tick-mark .scale:nth-of-type(48) {
+  transform: rotateZ(288deg);
+}
+
+.tick-mark .scale:nth-of-type(49) {
+  transform: rotateZ(294deg);
+}
+
+.tick-mark .scale:nth-of-type(50) {
+  transform: rotateZ(300deg);
+}
+
+.tick-mark .scale:nth-of-type(51) {
+  transform: rotateZ(306deg);
+}
+
+.tick-mark .scale:nth-of-type(52) {
+  transform: rotateZ(312deg);
+}
+
+.tick-mark .scale:nth-of-type(53) {
+  transform: rotateZ(318deg);
+}
+
+.tick-mark .scale:nth-of-type(54) {
+  transform: rotateZ(324deg);
+}
+
+.tick-mark .scale:nth-of-type(55) {
+  transform: rotateZ(330deg);
+}
+
+.tick-mark .scale:nth-of-type(56) {
+  transform: rotateZ(336deg);
+}
+
+.tick-mark .scale:nth-of-type(57) {
+  transform: rotateZ(342deg);
+}
+
+.tick-mark .scale:nth-of-type(58) {
+  transform: rotateZ(348deg);
+}
+
+.tick-mark .scale:nth-of-type(59) {
+  transform: rotateZ(354deg);
+}
+
+.tick-mark .scale:nth-of-type(60) {
+  transform: rotateZ(360deg);
+}
+
+/* 旋转数字角度位置，使数字展示正反旋转抵消 */
+.tick-mark .label:nth-of-type(1) {
+  transform: translateX(-50%) rotateZ(30deg);
+}
+
+.tick-mark .label:nth-of-type(1) label {
+  transform: rotateZ(-30deg);
+}
+
+.tick-mark .label:nth-of-type(2) {
+  transform: translateX(-50%) rotateZ(60deg);
+}
+
+.tick-mark .label:nth-of-type(2) label {
+  transform: rotateZ(-60deg);
+}
+
+.tick-mark .label:nth-of-type(3) {
+  transform: translateX(-50%) rotateZ(90deg);
+}
+
+.tick-mark .label:nth-of-type(3) label {
+  transform: rotateZ(-90deg);
+}
+
+.tick-mark .label:nth-of-type(4) {
+  transform: translateX(-50%) rotateZ(120deg);
+}
+
+.tick-mark .label:nth-of-type(4) label {
+  transform: rotateZ(-120deg);
+}
+
+.tick-mark .label:nth-of-type(5) {
+  transform: translateX(-50%) rotateZ(150deg);
+}
+
+.tick-mark .label:nth-of-type(5) label {
+  transform: rotateZ(-150deg);
+}
+
+.tick-mark .label:nth-of-type(6) {
+  transform: translateX(-50%) rotateZ(180deg);
+}
+
+.tick-mark .label:nth-of-type(6) label {
+  transform: rotateZ(-180deg);
+}
+
+.tick-mark .label:nth-of-type(7) {
+  transform: translateX(-50%) rotateZ(210deg);
+}
+
+.tick-mark .label:nth-of-type(7) label {
+  transform: rotateZ(-210deg);
+}
+
+.tick-mark .label:nth-of-type(8) {
+  transform: translateX(-50%) rotateZ(240deg);
+}
+
+.tick-mark .label:nth-of-type(8) label {
+  transform: rotateZ(-240deg);
+}
+
+.tick-mark .label:nth-of-type(9) {
+  transform: translateX(-50%) rotateZ(270deg);
+}
+
+.tick-mark .label:nth-of-type(9) label {
+  transform: rotateZ(-270deg);
+}
+
+.tick-mark .label:nth-of-type(10) {
+  transform: translateX(-50%) rotateZ(300deg);
+}
+
+.tick-mark .label:nth-of-type(10) label {
+  transform: rotateZ(-300deg);
+}
+
+.tick-mark .label:nth-of-type(11) {
+  transform: translateX(-50%) rotateZ(330deg);
+}
+
+.tick-mark .label:nth-of-type(11) label {
+  transform: rotateZ(-330deg);
+}
+
+.tick-mark .label:nth-of-type(12) {
+  transform: translateX(-50%) rotateZ(360deg);
+}
+
+.tick-mark .label:nth-of-type(12) label {
+  transform: rotateZ(-360deg);
+}
