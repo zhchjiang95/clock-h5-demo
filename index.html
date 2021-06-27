@@ -149,7 +149,7 @@
         const m = time.getMinutes()
         const s = time.getSeconds()
         sound && audio.play()
-        hEl.style.transform = `translateX(-50%) rotate(${hRefer[h] * 30 + m * 0.1 + s / 600}deg)`
+        hEl.style.transform = `translateX(-50%) rotate(${hRefer[h] * 30 + m * 0.5 + s / 120}deg)`
         mEl.style.transform = `translateX(-50%) rotate(${m * 6 + s * 0.1}deg)`
         sEl.style.transform = `translateX(-50%) rotate(${s * 6}deg)`
       }, 1000)
