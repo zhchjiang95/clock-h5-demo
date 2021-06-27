@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      background: #000;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .clock {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .label {
+      display: inline-block;
+      text-align: center;
+      padding: 5px 5px;
+      font-size: 20px;
+      transition: left 1s, top 1s;
+      transform-origin: 0 0;
+      color: #666;
+    }
+
+    .label.active {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="clock">
+    <div class="label month">一月</div>
+    <div class="label month">二月</div>
+    <div class="label month">三月</div>
+    <div class="label month">四月</div>
+    <div class="label month">五月</div>
+    <div class="label month">六月</div>
+    <div class="label month">七月</div>
+    <div class="label month">八月</div>
+    <div class="label month">九月</div>
+    <div class="label month">十月</div>
+    <div class="label month">十一月</div>
+    <div class="label month">十二月</div>
+    <div class="label day">一号</div>
+    <div class="label day">二号</div>
+    <div class="label day">三号</div>
+    <div class="label day">四号</div>
+    <div class="label day">五号</div>
+    <div class="label day">六号</div>
+    <div class="label day">七号</div>
+    <div class="label day">八号</div>
+    <div class="label day">九号</div>
+    <div class="label day">十号</div>
+    <div class="label day">十一号</div>
+    <div class="label day">十二号</div>
+    <div class="label day">十三号</div>
+    <div class="label day">十四号</div>
+    <div class="label day">十五号</div>
+    <div class="label day">十六号</div>
+    <div class="label day">十七号</div>
+    <div class="label day">十八号</div>
+    <div class="label day">十九号</div>
+    <div class="label day">二十号</div>
+    <div class="label day">二十一号</div>
+    <div class="label day">二十二号</div>
+    <div class="label day">二十三号</div>
+    <div class="label day">二十四号</div>
+    <div class="label day">二十五号</div>
+    <div class="label day">二十六号</div>
+    <div class="label day">二十七号</div>
+    <div class="label day">二十八号</div>
+    <div class="label day">二十九号</div>
+    <div class="label day">三十号</div>
+    <div class="label day">三十一号</div>
+    <div class="label week">星期日</div>
+    <div class="label week">星期一</div>
+    <div class="label week">星期二</div>
+    <div class="label week">星期三</div>
+    <div class="label week">星期四</div>
+    <div class="label week">星期五</div>
+    <div class="label week">星期六</div>
+    <div class="label hour">零点</div>
+    <div class="label hour">一点</div>
+    <div class="label hour">两点</div>
+    <div class="label hour">三点</div>
+    <div class="label hour">四点</div>
+    <div class="label hour">五点</div>
+    <div class="label hour">六点</div>
+    <div class="label hour">七点</div>
+    <div class="label hour">八点</div>
+    <div class="label hour">九点</div>
+    <div class="label hour">十点</div>
+    <div class="label hour">十一点</div>
+    <div class="label hour">十二点</div>
+    <div class="label hour">十三点</div>
+    <div class="label hour">十四点</div>
+    <div class="label hour">十五点</div>
+    <div class="label hour">十六点</div>
+    <div class="label hour">十七点</div>
+    <div class="label hour">十八点</div>
+    <div class="label hour">十九点</div>
+    <div class="label hour">二十点</div>
+    <div class="label hour">二十一点</div>
+    <div class="label hour">二十二点</div>
+    <div class="label hour">二十三点</div>
+    <div class="label minute">零分</div>
+    <div class="label minute">一分</div>
+    <div class="label minute">二分</div>
+    <div class="label minute">三分</div>
+    <div class="label minute">四分</div>
+    <div class="label minute">五分</div>
+    <div class="label minute">六分</div>
+    <div class="label minute">七分</div>
+    <div class="label minute">八分</div>
+    <div class="label minute">九分</div>
+    <div class="label minute">十分</div>
+    <div class="label minute">十一分</div>
+    <div class="label minute">十二分</div>
+    <div class="label minute">十三分</div>
+    <div class="label minute">十四分</div>
+    <div class="label minute">十五分</div>
+    <div class="label minute">十六分</div>
+    <div class="label minute">十七分</div>
+    <div class="label minute">十八分</div>
+    <div class="label minute">十九分</div>
+    <div class="label minute">二十分</div>
+    <div class="label minute">二十一分</div>
+    <div class="label minute">二十二分</div>
+    <div class="label minute">二十三分</div>
+    <div class="label minute">二十四分</div>
+    <div class="label minute">二十五分</div>
+    <div class="label minute">二十六分</div>
+    <div class="label minute">二十七分</div>
+    <div class="label minute">二十八分</div>
+    <div class="label minute">二十九分</div>
+    <div class="label minute">三十分</div>
+    <div class="label minute">三十一分</div>
+    <div class="label minute">三十二分</div>
+    <div class="label minute">三十三分</div>
+    <div class="label minute">三十四分</div>
+    <div class="label minute">三十五分</div>
+    <div class="label minute">三十六分</div>
+    <div class="label minute">三十七分</div>
+    <div class="label minute">三十八分</div>
+    <div class="label minute">三十九分</div>
+    <div class="label minute">四十分</div>
+    <div class="label minute">四十一分</div>
+    <div class="label minute">四十二分</div>
+    <div class="label minute">四十三分</div>
+    <div class="label minute">四十四分</div>
+    <div class="label minute">四十五分</div>
+    <div class="label minute">四十六分</div>
+    <div class="label minute">四十七分</div>
+    <div class="label minute">四十八分</div>
+    <div class="label minute">四十九分</div>
+    <div class="label minute">五十分</div>
+    <div class="label minute">五十一分</div>
+    <div class="label minute">五十二分</div>
+    <div class="label minute">五十三分</div>
+    <div class="label minute">五十四分</div>
+    <div class="label minute">五十五分</div>
+    <div class="label minute">五十六分</div>
+    <div class="label minute">五十七分</div>
+    <div class="label minute">五十八分</div>
+    <div class="label minute">五十九分</div>
+    <div class="label second">零秒</div>
+    <div class="label second">一秒</div>
+    <div class="label second">二秒</div>
+    <div class="label second">三秒</div>
+    <div class="label second">四秒</div>
+    <div class="label second">五秒</div>
+    <div class="label second">六秒</div>
+    <div class="label second">七秒</div>
+    <div class="label second">八秒</div>
+    <div class="label second">九秒</div>
+    <div class="label second">十秒</div>
+    <div class="label second">十一秒</div>
+    <div class="label second">十二秒</div>
+    <div class="label second">十三秒</div>
+    <div class="label second">十四秒</div>
+    <div class="label second">十五秒</div>
+    <div class="label second">十六秒</div>
+    <div class="label second">十七秒</div>
+    <div class="label second">十八秒</div>
+    <div class="label second">十九秒</div>
+    <div class="label second">二十秒</div>
+    <div class="label second">二十一秒</div>
+    <div class="label second">二十二秒</div>
+    <div class="label second">二十三秒</div>
+    <div class="label second">二十四秒</div>
+    <div class="label second">二十五秒</div>
+    <div class="label second">二十六秒</div>
+    <div class="label second">二十七秒</div>
+    <div class="label second">二十八秒</div>
+    <div class="label second">二十九秒</div>
+    <div class="label second">三十秒</div>
+    <div class="label second">三十一秒</div>
+    <div class="label second">三十二秒</div>
+    <div class="label second">三十三秒</div>
+    <div class="label second">三十四秒</div>
+    <div class="label second">三十五秒</div>
+    <div class="label second">三十六秒</div>
+    <div class="label second">三十七秒</div>
+    <div class="label second">三十八秒</div>
+    <div class="label second">三十九秒</div>
+    <div class="label second">四十秒</div>
+    <div class="label second">四十一秒</div>
+    <div class="label second">四十二秒</div>
+    <div class="label second">四十三秒</div>
+    <div class="label second">四十四秒</div>
+    <div class="label second">四十五秒</div>
+    <div class="label second">四十六秒</div>
+    <div class="label second">四十七秒</div>
+    <div class="label second">四十八秒</div>
+    <div class="label second">四十九秒</div>
+    <div class="label second">五十秒</div>
+    <div class="label second">五十一秒</div>
+    <div class="label second">五十二秒</div>
+    <div class="label second">五十三秒</div>
+    <div class="label second">五十四秒</div>
+    <div class="label second">五十五秒</div>
+    <div class="label second">五十六秒</div>
+    <div class="label second">五十七秒</div>
+    <div class="label second">五十八秒</div>
+    <div class="label second">五十九秒</div>
+  </div>
+
+
+  <script>
+    window.onload = () => {
+      setInterval(() => {
+        runTime();
+      }, 250)
+      // 定位当前时间
+      locateCurrent()
+    }
+
+    const runTime = () => {
+      let now = new Date(), m = now.getMonth(), d = now.getDate(), w = now.getDay(), h = now.getHours(), min = now.getMinutes(), s = now.getSeconds();
+
+      // 清空
+      document.querySelector('.month.active')?.classList.remove('active')
+      document.querySelector('.day.active')?.classList.remove('active')
+      document.querySelector('.week.active')?.classList.remove('active')
+      document.querySelector('.hour.active')?.classList.remove('active')
+      document.querySelector('.minute.active')?.classList.remove('active')
+      document.querySelector('.second.active')?.classList.remove('active')
+      // 定位当前时间
+      document.querySelectorAll('.month')[m].classList.add('active')
+      document.querySelectorAll('.day')[d - 1].classList.add('active')
+      document.querySelectorAll('.week')[w].classList.add('active')
+      document.querySelectorAll('.hour')[h].classList.add('active')
+      document.querySelectorAll('.minute')[min].classList.add('active')
+      document.querySelectorAll('.second')[s].classList.add('active')
+
+      // 旋转成罗盘
+      const calculation = (num, len, i, val, el) => {
+        // 计算出每一个元素的位置  x y 坐标，圆的半径与时分秒的位置有关
+        let r = (num + 1) * 35 + 50 * num;
+        // 计算每一个平均的角度  将每一个单位对齐,再转化成弧度
+        let deg = 360 / len * (i - val);
+        // 计算dom元素的坐标
+        let x = r * Math.sin(deg * Math.PI / 180) + widthMid;
+        let y = heightMid - r * Math.cos(deg * Math.PI / 180);
+
+        // 设置样式
+        el.style.transform = 'rotate(' + (-90 + deg) + 'deg)';
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+      }
+      document.querySelector('.clock').style.transform = "rotate(90deg)";
+
+      // 圆心位置确定
+      let widthMid = document.body.clientWidth / 2;
+      let heightMid = document.body.clientHeight / 2;
+      // 将每一个dom元素确定到圆的位置
+      // 月
+      const month = document.querySelectorAll('.month')
+      const day = document.querySelectorAll('.day')
+      const week = document.querySelectorAll('.week')
+      const hour = document.querySelectorAll('.hour')
+      const minute = document.querySelectorAll('.minute')
+      const second = document.querySelectorAll('.second')
+
+      month.forEach((el, i) => {
+        calculation(0, 12, i, m, el)
+      })
+      day.forEach((el, i) => {
+        calculation(1, 31, i, d - 1, el)
+      })
+      week.forEach((el, i) => {
+        calculation(2, 7, i, w, el)
+      })
+      hour.forEach((el, i) => {
+        calculation(3, 24, i, h, el)
+      })
+      minute.forEach((el, i) => {
+        calculation(4, 60, i, min, el)
+      })
+      second.forEach((el, i) => {
+        calculation(5, 60, i, s, el)
+      })
+    }
+
+    const locateCurrent = () => {
+      const l = document.querySelectorAll('.label')
+      Array.from(l).reverse().forEach(el => {
+        const left = el.offsetLeft + 'px'
+        const top = el.offsetTop + 'px'
+
+        el.style.left = left;
+        el.style.top = top;
+        el.style.position = "absolute";
+      })
+    }
+  </script>
+</body>
+
+</html>
